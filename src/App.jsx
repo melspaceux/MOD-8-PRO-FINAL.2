@@ -10,9 +10,9 @@ function App() {
 
       <main>
         <section className="welcome-card">
-          <h2>Proyecto Final - Parte 1</h2>
-          <p>Bienvenido a la etapa inicial de tu catálogo. Aquí verás pronto tus productos destacados.</p>
-          <div className="status-badge">Listo para el desarrollo</div>
+          <h2>Proyecto Final - Parte 2</h2>
+          <p>Estructura definida y organizada. El proyecto está listo para escalar e integrar nuevos componentes.</p>
+          <div className="status-badge">Estructura Base Completada</div>
         </section>
       </main>
 

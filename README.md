@@ -13,6 +13,11 @@ El objetivo de este proyecto es aprender a crear una aplicación Front End de fo
 - **Documentación:** El archivo README.md se mantendrá actualizado con el progreso del proyecto.
 
 ## Estructura del Proyecto
-- `src/`: Contiene los componentes, hooks y lógica de la aplicación.
-- `public/`: Archivos estáticos.
-- `README.md`: Descripción y acuerdos del proyecto.
+- `src/`: Carpeta principal del código fuente.
+  - `assets/`: Imágenes, fuentes y archivos estáticos.
+  - `components/`: Componentes reutilizables de la interfaz.
+  - `context/`: Gestión de estados globales.
+  - `hooks/`: Hooks personalizados.
+  - `pages/`: Vistas completas de la aplicación.
+- `public/`: Archivos públicos que no pasan por el proceso de build.
+- `README.md`: Documentación, acuerdos y descripción.
