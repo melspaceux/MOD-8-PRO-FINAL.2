@@ -1,0 +1,18 @@
+# Catálogo Interactivo de Productos
+
+Este proyecto es una aplicación web desarrollada con React que permite a los usuarios explorar un catálogo de productos de forma interactiva. Es parte del Proyecto Final del curso.
+
+## Objetivo
+El objetivo de este proyecto es aprender a crear una aplicación Front End de forma paulatina, aplicando conceptos avanzados de React y profundizando en el desarrollo de interfaces modernas y escalables.
+
+## Acuerdos de Trabajo
+- **Dinámica:** Trabajo Individual.
+- **Metodología:** Autogestión siguiendo los lineamientos del curso y el marco de trabajo SCRUM para la organización de tareas.
+- **Control de Versiones:** Uso de Git y GitHub como repositorio principal.
+- **Commits:** Se realizarán commits descriptivos para cada hito alcanzado.
+- **Documentación:** El archivo README.md se mantendrá actualizado con el progreso del proyecto.
+
+## Estructura del Proyecto
+- `src/`: Contiene los componentes, hooks y lógica de la aplicación.
+- `public/`: Archivos estáticos.
+- `README.md`: Descripción y acuerdos del proyecto.
