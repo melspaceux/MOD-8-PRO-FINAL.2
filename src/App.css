@@ -1,0 +1,62 @@
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #888;
+  margin-top: -1rem;
+}
+
+.welcome-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 3rem;
+  max-width: 600px;
+  margin: 0 auto;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.welcome-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(100, 108, 255, 0.5);
+}
+
+.welcome-card h2 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.status-badge {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(100, 108, 255, 0.1);
+  color: #646cff;
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.read-the-docs {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+@media (prefers-color-scheme: light) {
+  .welcome-card {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.05);
+  }
+  .welcome-card h2 {
+    color: #213547;
+  }
+}
