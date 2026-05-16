@@ -362,8 +362,54 @@ header {
   background: #ff1a1a;
 }
 
+.error-text {
+  color: #ff4d4d;
+  font-size: 0.75rem;
+  margin-top: 0.3rem;
+  display: block;
+}
+
+.input-error {
+  border-color: #ff4d4d !important;
+  background: rgba(255, 77, 77, 0.05) !important;
+}
+
+.success-banner {
+  background: rgba(77, 255, 140, 0.1);
+  border: 1px solid rgba(77, 255, 140, 0.2);
+  padding: 1.5rem;
+  border-radius: 15px;
+  color: #4dff8c;
+}
+
+.auth-link {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.auth-link a {
+  color: #646cff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-link a:hover {
+  text-decoration: underline;
+}
+
 /* Responsive */
 @media (prefers-color-scheme: light) {
+  .error-text {
+    color: #cc0000;
+  }
+  .input-error {
+    background: rgba(204, 0, 0, 0.02) !important;
+  }
+  .success-banner {
+    background: rgba(0, 150, 0, 0.05);
+    color: #008000;
+  }
   .nav-btn {
     color: #213547;
     background: rgba(0, 0, 0, 0.05);

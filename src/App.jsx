@@ -3,6 +3,7 @@ import { AuthProvider } from './context/AuthContext';
 import PrivateRoute from './components/PrivateRoute';
 import Catalog from './pages/Catalog';
 import Login from './pages/Login';
+import Register from './pages/Register';
 import Profile from './pages/Profile';
 import './App.css';
 
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Catalog />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
             <Route 
               path="/profile" 
               element={

@@ -13,8 +13,13 @@ export const getProducts = async () => {
     const response = await api.get('/products');
     return response.data;
   } catch (error) {
-    console.error('Error fetching products:', error);
-    throw error;
+    if (error.response) {
+      throw new Error(`Error del servidor: ${error.response.status}`);
+    } else if (error.request) {
+      throw new Error('No se pudo contactar con el servidor. Revisa tu conexión.');
+    } else {
+      throw new Error('Ocurrió un error inesperado al procesar el catálogo.');
+    }
   }
 };
 
