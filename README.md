@@ -12,6 +12,12 @@ El objetivo de este proyecto es aprender a crear una aplicación Front End de fo
 - **Commits:** Se realizarán commits descriptivos para cada hito alcanzado.
 - **Documentación:** El archivo README.md se mantendrá actualizado con el progreso del proyecto.
 
+## Backend y Comunicación
+Para este proyecto se ha seleccionado la **Fake Store API** como backend principal para el catálogo de productos.
+- **URL Base:** `https://fakestoreapi.com`
+- **Lógica de Comunicación:** Se utiliza la librería **Axios** para realizar las peticiones HTTP desde el frontend.
+- **Servicios:** La configuración y funciones de llamada a la API se encuentran en `src/services/api.js`.
+
 ## Estructura del Proyecto
 - `src/`: Carpeta principal del código fuente.
   - `assets/`: Imágenes, fuentes y archivos estáticos.
@@ -19,5 +25,6 @@ El objetivo de este proyecto es aprender a crear una aplicación Front End de fo
   - `context/`: Gestión de estados globales.
   - `hooks/`: Hooks personalizados.
   - `pages/`: Vistas completas de la aplicación.
+  - `services/`: Configuración de servicios y llamadas a APIs externas.
 - `public/`: Archivos públicos que no pasan por el proceso de build.
 - `README.md`: Documentación, acuerdos y descripción.
