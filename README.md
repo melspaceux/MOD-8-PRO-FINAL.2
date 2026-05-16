@@ -18,7 +18,18 @@ Para este proyecto se ha seleccionado la **Fake Store API** como backend princip
 - **Lógica de Comunicación:** Se utiliza la librería **Axios** para realizar las peticiones HTTP desde el frontend.
 - **Servicios:** La configuración y funciones de llamada a la API se encuentran en `src/services/api.js`.
 
+## CI/CD y Despliegue
+Este proyecto utiliza un flujo de **Integración Continua (CI)** y **Despliegue Continuo (CD)**:
+- **CI (GitHub Actions):** Cada push a la rama `main` activa un workflow automático que instala dependencias y verifica que el proyecto compila correctamente.
+- **CD (Vercel):** La aplicación está conectada a **Vercel**, lo que permite despliegues automáticos cada vez que se actualiza el código en el repositorio de GitHub.
+
+### Cómo desplegar:
+1. Conecta tu repositorio de GitHub a Vercel.
+2. Vercel detectará automáticamente la configuración de Vite.
+3. El archivo `vercel.json` asegura que las rutas de React Router funcionen correctamente en producción.
+
 ## Estructura del Proyecto
+- `.github/workflows/`: Pipelines de automatización.
 - `src/`: Carpeta principal del código fuente.
   - `assets/`: Imágenes, fuentes y archivos estáticos.
   - `components/`: Componentes reutilizables de la interfaz.
