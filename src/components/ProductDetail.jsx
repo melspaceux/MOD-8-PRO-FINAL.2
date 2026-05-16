@@ -1,4 +1,7 @@
+import { useCart } from '../context/CartContext';
+
 function ProductDetail({ product, onClose }) {
+  const { addToCart } = useCart();
   if (!product) return null;
 
   return (
@@ -16,10 +19,12 @@ function ProductDetail({ product, onClose }) {
             <div className="purchase-info">
               <span className="detail-price">${product.price}</span>
               <div className="rating">
-                ⭐ {product.rating.rate} ({product.rating.count} reviews)
+                ⭐ {product.rating?.rate} ({product.rating?.count} reviews)
               </div>
             </div>
-            <button className="buy-btn">Añadir al carrito</button>
+            <button onClick={() => { addToCart(product); onClose(); }} className="buy-btn">
+              Añadir al carrito
+            </button>
           </div>
         </div>
       </div>

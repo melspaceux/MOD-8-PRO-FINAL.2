@@ -435,3 +435,133 @@ header {
     padding: 2rem;
   }
 }
+
+/* Cart Page */
+.cart-page {
+  width: 100%;
+}
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.5rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cart-item-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.cart-item-info {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.cart-item-info h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.item-total {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.cart-summary {
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  color: #888;
+}
+
+.summary-row.total {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-top: 1.5rem;
+}
+
+.free-shipping {
+  color: #4dff8c;
+  font-weight: 600;
+}
+
+.checkout-btn {
+  margin-top: 2rem;
+  background: #646cff;
+  color: white;
+}
+
+.clear-btn {
+  background: transparent;
+  margin-top: 1rem;
+}
+
+.cart-badge {
+  background: #646cff;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.card-actions .detail-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .cart-item {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.05);
+  }
+  .summary-row.total {
+    color: #213547;
+  }
+}

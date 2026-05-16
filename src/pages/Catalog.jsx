@@ -1,27 +1,27 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo, useCallback } from 'react'
 import { getProducts } from '../services/api'
 import ProductCard from '../components/ProductCard'
 import SearchBar from '../components/SearchBar'
 import ProductDetail from '../components/ProductDetail'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
+import { useCart } from '../context/CartContext'
 
 function Catalog() {
   const [products, setProducts] = useState([])
-  const [filteredProducts, setFilteredProducts] = useState([])
   const [loading, setLoading] = useState(true)
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedProduct, setSelectedProduct] = useState(null)
   
   const navigate = useNavigate()
   const { token } = useAuth()
+  const { cartCount } = useCart()
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await getProducts()
         setProducts(data)
-        setFilteredProducts(data)
       } catch (error) {
         console.error("Error cargando productos:", error)
       } finally {
@@ -31,17 +31,29 @@ function Catalog() {
     fetchData()
   }, [])
 
-  useEffect(() => {
-    const filtered = products.filter(product =>
+  // Optimización: useMemo para evitar filtrar en cada render si no cambia el query o los productos
+  const filteredProducts = useMemo(() => {
+    return products.filter(product =>
       product.title.toLowerCase().includes(searchQuery.toLowerCase())
     )
-    setFilteredProducts(filtered)
   }, [searchQuery, products])
+
+  // Optimización: useCallback para que la función no cambie en cada render y ProductCard (memo) no se re-renderice
+  const handleSelectProduct = useCallback((product) => {
+    setSelectedProduct(product)
+  }, [])
+
+  const handleCloseDetail = useCallback(() => {
+    setSelectedProduct(null)
+  }, [])
 
   return (
     <>
       <header>
         <div className="nav-actions">
+          <button onClick={() => navigate('/cart')} className="nav-btn cart-btn">
+            🛒 Carrito <span className="cart-badge">{cartCount}</span>
+          </button>
           {token ? (
             <button onClick={() => navigate('/profile')} className="nav-btn">👤 Mi Perfil</button>
           ) : (
@@ -69,7 +81,7 @@ function Catalog() {
                 <ProductCard 
                   key={product.id} 
                   product={product} 
-                  onSelect={setSelectedProduct} 
+                  onSelect={handleSelectProduct} 
                 />
               ))}
             </div>
@@ -80,7 +92,7 @@ function Catalog() {
       {selectedProduct && (
         <ProductDetail 
           product={selectedProduct} 
-          onClose={() => setSelectedProduct(null)} 
+          onClose={handleCloseDetail} 
         />
       )}
     </>
